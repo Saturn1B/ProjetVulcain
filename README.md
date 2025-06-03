@@ -1,1 +1,1 @@
-# ProjetVulcain
+# Game Design Document - ProjetVulcain
