@@ -1,6 +1,8 @@
 # Game Design Document - Projet Vulcain
     
 Pitch : Dans un monde post-apocalyptique stylisé en low poly, un survivant solitaire tente de reconstruire une base fonctionnelle à partir de débris, en automatisant la production, en repoussant des vagues ennemies et en explorant les ruines d’une civilisation perdue.  
+
+[Plus d'info](https://www.figma.com/design/ZtcchwBnodFHNNDDVN3DXy/Untitled?node-id=0-1&t=sYFNhcCgciKnuzE5-1)
   
 ## I. Informations générales  
 
