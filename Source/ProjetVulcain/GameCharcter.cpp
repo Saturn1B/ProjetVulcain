@@ -1,4 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
+//https://www.youtube.com/watch?v=nvruYLgjKkk&list=PL-m4pn2uJvXHL5rxdudkhqrSRM5gN43YN&index=1
 
 
 #include "GameCharcter.h"
@@ -11,6 +12,20 @@ AGameCharcter::AGameCharcter()
 
 	//Create components
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+	CameraMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CameraMesh"));
+
+
+	// Setup camera
+	Camera->FieldOfView = 120.f;
+	Camera->SetupAttachment(CameraMesh);
+	Camera->SetRelativeLocation(FVector(-200.0f, 0.0f, 150.0f));
+}
+
+void AGameCharcter::MoveLR(float movementDelta) 
+{
+	FVector newLocation = GetActorLocation();
+	newLocation.Y += movementDelta * MovementSpeed;
+	SetActorLocation(newLocation);
 }
 
 // Called when the game starts or when spawned
@@ -31,6 +46,9 @@ void AGameCharcter::Tick(float DeltaTime)
 void AGameCharcter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	//Register for LR Movement 
+	PlayerInputComponent->BindAxis(TEXT("MoveLR"), this, &AGameCharcter::MoveLR);
 
 }
 

@@ -5,5 +5,5 @@
 
 ANicolasGameModeBase::ANicolasGameModeBase() 
 {
-	
+	DefaultPawnClass = AGameCharcter::StaticClass();
 }
